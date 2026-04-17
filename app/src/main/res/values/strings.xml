@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GIGROUP Monitor</string>
+    <string name="settings">Configurações</string>
+    <string name="reload">Recarregar</string>
+    <string name="clear_cache">Limpar cache</string>
+</resources>

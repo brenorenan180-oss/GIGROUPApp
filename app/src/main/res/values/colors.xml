@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0B0E14</color>
+    <color name="bg_toolbar">#111520</color>
+    <color name="bg_card">#181D2C</color>
+    <color name="green_primary">#25D366</color>
+    <color name="green_dark">#0D5C2A</color>
+    <color name="red_accent">#FF4560</color>
+    <color name="yellow_accent">#FFC107</color>
+    <color name="blue_accent">#4FA3E0</color>
+    <color name="text_primary">#DCE3F0</color>
+    <color name="text_muted">#5A6380</color>
+    <color name="border">#222840</color>
+</resources>
