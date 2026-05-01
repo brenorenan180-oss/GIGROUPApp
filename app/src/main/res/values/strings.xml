@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GIGROUP Monitor</string>
+    <string name="accessibility_description">Monitora o grupo GIGROUP e abre links de vagas automaticamente, sem precisar de interacao manual.</string>
+</resources>

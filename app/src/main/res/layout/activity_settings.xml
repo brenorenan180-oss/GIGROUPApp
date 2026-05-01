@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_page">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Toolbar -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/bg_toolbar"
+            android:elevation="0dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <!-- Card: Automação -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/bg_card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Automação"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monitorar grupo GIGROUP"
+                        android:textColor="@color/text_muted"
+                        android:textSize="12sp"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/sw_enabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stats cards com gradiente -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp"
+                    android:background="@drawable/gradient_blue">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="TOTAL" android:textColor="#AAFFFFFF" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tv_total" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0"
+                        android:textColor="#FFFFFF" android:textSize="32sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="3dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp"
+                    android:background="@drawable/gradient_green">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="HOJE" android:textColor="#AAFFFFFF" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tv_today" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0"
+                        android:textColor="#FFFFFF" android:textSize="32sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp"
+                    android:background="@drawable/gradient_purple">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="LIMITE" android:textColor="#AAFFFFFF" android:textSize="11sp"/>
+                    <TextView android:id="@+id/tv_limit" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="50"
+                        android:textColor="#FFFFFF" android:textSize="32sp" android:textStyle="bold"/>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Progress indicator -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/bg_card">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Progresso hoje"
+                        android:textColor="@color/text_primary" android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/tv_progress" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="0 / 50"
+                        android:textColor="@color/green_primary" android:textSize="13sp"/>
+                </LinearLayout>
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:trackThickness="10dp"
+                    app:indicatorColor="@color/green_primary"
+                    app:trackColor="@color/bg_dark"
+                    app:trackCornerRadius="5dp"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card: Perfil -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/bg_card">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="👤  Perfil" android:textColor="@color/text_primary"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="16dp"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="CPF"
+                    android:layout_marginBottom="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_cpf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="14"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Data de Nascimento (DD/MM/AAAA)"
+                    android:layout_marginBottom="12dp"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_nasc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="10"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/epi_bg" android:padding="12dp"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="✅" android:textSize="18sp" android:layout_marginEnd="8dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="EPI será marcado como Sim automaticamente"
+                        android:textColor="@color/green_primary" android:textSize="12sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card: Agenda -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/bg_card">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="📅  Dias Permitidos" android:textColor="@color/text_primary"
+                    android:textSize="16sp" android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+                <!-- Chips para dias da semana -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_days"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="false"
+                    app:chipSpacingHorizontal="6dp"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_dom"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dom" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_seg"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Seg" android:checked="true" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_ter"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Ter" android:checked="true" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_qua"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Qua" android:checked="true" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_qui"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Qui" android:checked="true" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_sex"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Sex" android:checked="true" android:textSize="12sp"/>
+                    <com.google.android.material.chip.Chip android:id="@+id/chip_sab"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Sáb" android:textSize="12sp"/>
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Slider para limite diário -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="Limite diário"
+                        android:textColor="@color/text_primary" android:textSize="14sp"/>
+                    <TextView android:id="@+id/tv_slider_value"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="50" android:textColor="@color/green_primary"
+                        android:textSize="16sp" android:textStyle="bold"
+                        android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="links/dia" android:textColor="@color/text_muted" android:textSize="12sp"/>
+                </LinearLayout>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/slider_limit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:valueFrom="1"
+                    android:valueTo="100"
+                    android:stepSize="1"
+                    android:value="50"
+                    app:thumbColor="@color/green_primary"
+                    app:trackColorActive="@color/green_primary"
+                    app:trackColorInactive="@color/bg_dark"
+                    app:labelBehavior="gone"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botões de ação -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="SALVAR CONFIGURAÇÕES"
+                android:textColor="@color/bg_dark"
+                app:backgroundTint="@color/green_primary"
+                app:cornerRadius="28dp"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logs"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="VER HISTÓRICO DE LOGS"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:cornerRadius="28dp"
+                app:strokeColor="@color/green_primary"
+                android:textColor="@color/green_primary"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_notif_access"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ATIVAR ACESSO A NOTIFICAÇÕES"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:cornerRadius="28dp"
+                app:strokeColor="@color/yellow_accent"
+                android:textColor="@color/yellow_accent"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_battery"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="IGNORAR OTIMIZAÇÃO DE BATERIA"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:cornerRadius="28dp"
+                app:strokeColor="@color/blue_accent"
+                android:textColor="@color/blue_accent"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_clear"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="ZERAR HISTÓRICO"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:cornerRadius="28dp"
+                android:textColor="@color/red_accent"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
