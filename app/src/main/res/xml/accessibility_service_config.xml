@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    accessibility_service_config.xml — GIGROUP Monitor
+    Configuração do AccessibilityService para monitorar o WhatsApp.
+
+    Para ativar: Configurações → Acessibilidade → GIGROUP Monitor → Ativar
+-->
+<accessibility-service
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/accessibility_description"
+    android:packageNames="com.whatsapp,com.whatsapp.w4b"
+    android:accessibilityEventTypes="typeWindowContentChanged|typeNotificationStateChanged|typeWindowStateChanged"
+    android:accessibilityFlags="flagReportViewIds|flagRetrieveInteractiveWindows"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:notificationTimeout="100"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="true"/>

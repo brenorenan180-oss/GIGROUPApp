@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Tema principal — usa Material3 como parent para suportar:
+        Chip, Slider, LinearProgressIndicator, TextInputLayout OutlinedBox,
+        MaterialCardView e MaterialButton sem crash.
+    -->
+    <style name="Theme.GIGROUP" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorOnPrimary">@color/bg_dark</item>
+        <item name="colorSecondary">@color/green_primary</item>
+        <item name="colorOnSecondary">@color/bg_dark</item>
+        <item name="colorSurface">@color/bg_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/bg_dark</item>
+        <item name="colorOnSurfaceVariant">@color/text_muted</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_toolbar</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <!-- Toolbar com AppCompat para compatibilidade com setSupportActionBar -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- BottomSheet arredondado -->
+    <style name="BottomSheetStyle" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetShape</item>
+        <item name="android:colorBackground">@color/bg_card</item>
+    </style>
+
+    <style name="BottomSheetShape" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearance">@style/BottomSheetCorners</item>
+        <item name="backgroundTint">@color/bg_card</item>
+    </style>
+
+    <style name="BottomSheetCorners" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+</resources>
